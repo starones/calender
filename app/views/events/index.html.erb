@@ -4,7 +4,9 @@
   <%= date.day %>
     <% events.each do |event| %>
     <div>
-      <%= event.title %>
+      <%= link_to event_path(events) do %>
+        <%= event.title %>
+      <% end %>
     </div>
     <% end %>
 <% end %>
