@@ -1,5 +1,7 @@
 <%= link_to "イベント追加", new_event_path %>
 
+<div id="T1"></div>
+
 <%= month_calendar events: @events do |date, events| %>
   <%= date.day %>
     <% events.each do |event| %>
@@ -10,3 +12,12 @@
     </div>
     <% end %>
 <% end %>
+
+<script>
+  window.onload = function() {
+  setInterval(function() {
+    var dd = new Date();
+    document.getElementById("T1").innerHTML = dd.toLocaleString();
+  }, 1000);
+}
+</script>
